@@ -406,7 +406,7 @@ header {
               border-radius: 3px 0 0 3px;
             }
           }
-          .overview {
+          @at-root .overview { // @at-root 밖으로
             margin-top: 10px;
             h4 {
               font-weight: 400;
@@ -460,6 +460,48 @@ header {
 }
 
 /* best-class */
+.best-class {
+  .best-class-inner {
+    .best-class-content {
+      .best-class-wrap {
+        display: flex;
+        gap: 25px;
+        .invite-banner {
+          img {
+            height: 320px;
+          }
+        }
+        .best-class-items-outer {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .best-class-items {
+            display: flex;
+            gap: 15px;
+            .best-class-item {
+              display: flex;
+              gap: 15px;
+              flex: 1;
+              cursor: pointer;
+              .thum {
+                width: 130px;
+                img {
+                  object-fit: cover;
+                  width: inherit;
+                  height: inherit;
+                  border-radius: 3px;
+                }
+              }
+              .overview {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 /* early-bird */
 /* blog */
 /* slogan */

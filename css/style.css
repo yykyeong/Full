@@ -387,41 +387,41 @@ header .mega-navi .mega-navi-inner .mega-navi-item .mega-navi-item-wrap a:hover 
   padding: 2px 8px;
   border-radius: 3px 0 0 3px;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview {
+.overview {
   margin-top: 10px;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview h4 {
+.overview h4 {
   font-weight: 400;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-info {
+.overview .class-info {
   font-size: 13px;
   color: #999999;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-price {
+.overview .class-price {
   font-size: 16px;
   margin-bottom: 3px;
   word-spacing: 10px;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-price .sale {
+.overview .class-price .sale {
   color: #ED2040;
   font-weight: 400;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-price .price-prev {
+.overview .class-price .price-prev {
   color: #BDBDBD;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-price .price-current {
+.overview .class-price .price-current {
   font-weight: 400;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-review .stars {
+.overview .class-review .stars {
   word-spacing: -2px;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-review .stars .bi {
+.overview .class-review .stars .bi {
   color: #FFD912;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-review .rating {
+.overview .class-review .rating {
   margin-left: 5px;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-review .rating::after {
+.overview .class-review .rating::after {
   content: "|";
   color: #BDBDBD;
   font-size: 10px;
@@ -431,6 +431,41 @@ header .mega-navi .mega-navi-inner .mega-navi-item .mega-navi-item-wrap a:hover 
 }
 
 /* best-class */
+.best-class .best-class-inner .best-class-content .best-class-wrap {
+  display: flex;
+  gap: 25px;
+}
+.best-class .best-class-inner .best-class-content .best-class-wrap .invite-banner img {
+  height: 320px;
+}
+.best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items {
+  display: flex;
+  gap: 15px;
+}
+.best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items .best-class-item {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+  cursor: pointer;
+}
+.best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items .best-class-item .thum {
+  width: 130px;
+}
+.best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items .best-class-item .thum img {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+  border-radius: 3px;
+}
+.best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items .best-class-item .overview {
+  margin-top: 0;
+}
+
 /* early-bird */
 /* blog */
 /* slogan */
