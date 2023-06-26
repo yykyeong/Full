@@ -13,7 +13,6 @@ body {
 }
 
 /* Temporary CSS */
-.early-bird,
 .blog,
 .slogan,
 .tip-tech,
@@ -494,6 +493,12 @@ header {
               }
               .overview {
                 margin-top: 0;
+                display: flex;
+                flex-direction: column;
+                .class-price {
+                  margin-top: auto;
+
+                }
               }
             }
           }
@@ -503,6 +508,86 @@ header {
   }
 }
 /* early-bird */
+.early-bird {
+  background-color: $cloudy-gray;
+  .early-bird-inner {
+    .early-bird-content {
+      .coundown-wrap {
+        width: 600px;
+        margin: auto;
+        margin-bottom: 50px;
+        text-align: center;
+        .early-bird-info {
+          display: block;
+          font-size: 13px;
+        }
+      }
+      .early-bird-banner {
+        display: flex;
+        background-color: rgba($orange, .1);
+        border-radius: 20px;
+        padding: 20px 100px;
+        align-items: center;
+        justify-content: space-between;
+        .banner-about {
+          h1 {
+            font-size: 32px;
+            font-weight: bold;
+            span {
+              font-weight: 500;
+              display: block;
+              font-size: 0.9em;
+            }
+          }
+          .hash-tag {
+            color: $forestgreen;
+            word-spacing: 5px;
+          }
+        }
+        .banner-thum {
+          img {}
+        }
+      }
+    }
+  }
+}
+
+/*################## CountDown ######################*/
+#early-bird-countdown {
+  font-size: 30px;
+  margin-bottom: 30px;
+  b {
+    font-weight: normal;
+    color: $crimson;
+  }
+  em {
+    font-style: normal;
+    background-color: $black;
+    color: $white;
+    padding: 0 5px;
+    border-radius: 0 5px;
+    margin: 5px;
+    position: relative;
+    &::after {
+      position: absolute;
+      font-size: 12px;
+      text-align: center;
+      left: 0;
+      top: 100%;
+      color: #000;
+      width: 100%;
+    }
+    &:nth-of-type(1)::after {
+      content: 'hrs';
+    }
+    &:nth-of-type(2)::after {
+      content: 'min';
+    }
+    &:nth-of-type(3)::after {
+      content: 'sec';
+    }
+  }
+}
 /* blog */
 /* slogan */
 /* tip-tech */

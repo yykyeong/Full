@@ -1,10 +1,18 @@
 $(function(){
 
+  /* Countdown*/
+  $("#early-bird-countdown")
+  .countdown("2023/11/01", function(event) {
+    $(this).html(
+      event.strftime('<b>종료까지</b> %D일 <em>%H</em>:<em>%M</em>:<em>%S</em> 남음')
+    );
+  });
+
   /* Focus Class */
   $('.like').click(function(){
     $(this).toggleClass('active')
   })
-  
+
   /* Front Slider */
   $('.front-slider-items').slick({
     infinite: true, // 마지막 슬라이드 다음에 처음으로 돌아가기
