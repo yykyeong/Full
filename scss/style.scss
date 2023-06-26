@@ -13,9 +13,6 @@ body {
 }
 
 /* Temporary CSS */
-
-.focus-class,
-.best-class,
 .early-bird,
 .blog,
 .slogan,
@@ -26,12 +23,27 @@ footer {
 
 /* ########################## Common CSS ########################## */
 section:not(.front-slider) {
-  border: 1px solid #000;
   padding: 65px 0;
 }
 [class*=inner] { // class 중에 inner 들어가 있는 것들
   width: 1160px;
   margin: auto;
+}
+.front-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $secondary-kr;
+  height: 50px;
+  margin-bottom: 20px;
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  a {
+    font-size: 14px;
+    color: $dim-black;
+  }
 }
 
 /* header */
@@ -329,7 +341,124 @@ header {
     }
   }
 }
+
 /* focus-class */
+.focus-class {
+  background-color: $cloudy-gray;
+  .focus-class-inner {
+    .focus-class-content {
+      margin-bottom: 40px;
+      .focus-class-items {
+        /* Custom CSS : Slick - 아이템 간격 조절 */
+        .slide-list {
+          margin: 0 -5px;
+        }
+        .slick-slide {
+          margin: 0 5px;
+        }
+        /* Custom CSS : Slick - 다음 이전 아이콘 */
+        .slick-next:before,
+        .slick-prev:before {
+          content: '\F285';
+          font-family: $bs-font;
+          color: $light-black;
+          display: inline-block; // 밑에 transform 적용시키려고
+        }
+        .slick-prev:before {
+          transform: rotateY(180deg);
+        }
+        .focus-class-item {
+          .thum {
+            width: 100%;
+            height: 160px;
+            position: relative;
+            img {
+              border-radius: 5px;
+              object-fit: cover;
+              // object-fit 조건 : 부모요소 너비높이 상속받아야함
+              width: inherit;
+              height: inherit;
+            }
+            .like {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              font-style: normal;
+              cursor: pointer;
+              &::before {
+                content: '\F417';
+                font-family: $bs-font;
+                color: $white;
+              }
+              &.active::before {
+                content: '\F415';
+                color: $crimson;
+              }
+            }
+            .badge {
+              position: absolute;
+              bottom: 10px;
+              right: 0;
+              background-color: $crimson;
+              color: $white;
+              font-size: 12px;
+              padding: 2px 8px;
+              border-radius: 3px 0 0 3px;
+            }
+          }
+          .overview {
+            margin-top: 10px;
+            h4 {
+              font-weight: 400;
+            }
+            .class-info {
+              font-size: 13px;
+              color: $light-black;
+            }
+            .class-price {
+              font-size: 16px;
+              margin-bottom: 3px;
+              word-spacing: 10px;
+              // >  * {
+              //   margin-right: 10px;
+              // }
+              .sale {
+                color: $crimson;
+                font-weight: 400;
+              }
+              .price-prev {
+                color: $dark-gray;
+              }
+              .price-current {
+                font-weight: 400;
+              }
+            }
+            .class-review {
+              .stars {
+                word-spacing: -2px;
+                .bi {
+                  color: $orange;
+                }
+              }
+              .rating {
+                margin-left: 5px;
+                &::after {
+                  content: '|';
+                  color: $dark-gray;
+                  font-size: 10px;
+                  margin-left: 5px;
+                  transform: translateY(-2px); // 인라인요소는 처리안되서 바꿔줘야함
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 /* best-class */
 /* early-bird */
 /* blog */
