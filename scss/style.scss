@@ -3,14 +3,16 @@
 
 * {
   font-family: $primary-kr;
+  color: $dark-black;
 }
+
 body {
   font-weight: 300;
   margin: 0;
   font-size: 15px;
 }
 
-/* Temporary CSS */ 
+/* Temporary CSS */
 .front-slider,
 .category-shortcut,
 .focus-class,
@@ -23,6 +25,213 @@ footer {
   display: none;
 }
 
-/* ########################## Common CSS ########################## */ 
+/* ########################## Common CSS ########################## */
 section {
+  border: 1px solid #000;
+  padding: 65px 0;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: center;
+  background-color: $white;
+  border-bottom: 1px solid $silver-gray;
+  position: relative;
+
+  .header-inner {
+    width: 1160px;
+    // logo-search
+    .logo-search {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+
+      .logo {
+        img {}
+      }
+
+      .search {
+        width: 520px;
+        position: relative;
+
+        input[type=text] {
+          width: 100%;
+          background-color: $silver-gray;
+          padding: 7px;
+          border-radius: 50px;
+          padding-left: 15px;
+
+          &:focus::placeholder {
+            visibility: hidden;
+          }
+
+          &:focus {
+            border: 1px solid rgba($royalblue, .5);
+            background-color: $white;
+            box-shadow: 0 0 5px rgba($royalblue, .5);
+          }
+
+          &:focus+img {
+            filter: invert(24%) sepia(89%) saturate(4498%) hue-rotate(201deg) brightness(99%) contrast(104%);
+          }
+        }
+
+        img {
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          cursor: pointer;
+        }
+      }
+
+      // 로그인 전  UI
+      .login-register-buttons {
+        margin-left: auto;
+
+        button {
+          border: 1px solid $dim-gray;
+          border-radius: 5px;
+          padding: 5px 10px;
+          background-color: transparent;
+
+          &.btn-login {}
+
+          &.btn-register {
+            background-color: $forestgreen;
+            color: $white;
+            border: transparent;
+          }
+        }
+      }
+
+      // 로그인 후  UI
+      .user-alarm {
+        margin-left: auto;
+
+        span {
+          margin-right: 10px;
+          vertical-align: middle;
+          width: 20px; // 동그라미 명시적으로 하려고 
+          position: relative;
+
+          .bi {
+            font-size: 20px;
+          }
+
+          em {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: $tomato;
+            border-radius: 50%;
+            right: 0px;
+
+            // before에 flex 안주고 lh15, tac 줘도 됨
+            &::before {
+              content: attr(data-count);
+              color: $white;
+              font-style: normal;
+              font-size: 11px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+
+        .avatar {
+          img {
+            height: 28px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+
+    // gnb
+    .gnb {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      a {
+        font-weight: 400;
+        color: $dim-black;
+
+        &::after {
+          content: '·';
+          padding-left: 7px;
+        }
+
+        &:last-child::after {
+          display: none;
+        }
+
+        &:hover:not(.trigger) {
+          color: $crimson;
+        }
+      }
+
+      .trigger {
+        &::before {
+          content: '';
+          background-image: url('/images/icon-category.png');
+          width: 20px;
+          height: 18px;
+          display: inline-block;
+          margin-right: 5px;
+          transform: translateY(4px);
+        }
+      }
+    }
+  }
+
+  .mega-navi {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: $dark-black;
+    width: 100%;
+
+    .mega-navi-inner {
+      border: 1px solid red;
+      width: 1160px;
+      margin: auto;
+      // 부모에 flex 못주는 이유는 none을 줘야하기 때문에 마진으로 중앙정렬
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+
+      display: flex;
+      justify-content: space-between;
+
+      .mega-navi-item {
+        color: $white;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.8em;
+        flex: 1;
+
+        b {
+          color: $white;
+          font-weight: 500;
+        }
+
+        .mega-navi-item-wrap {
+          a {
+            display: block;
+            color: $dark-gray;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
