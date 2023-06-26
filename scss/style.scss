@@ -1,0 +1,28 @@
+/* Import Local SCSS Files */
+@import "reset", "variables", "fonts";
+
+* {
+  font-family: $primary-kr;
+}
+body {
+  font-weight: 300;
+  margin: 0;
+  font-size: 15px;
+}
+
+/* Temporary CSS */ 
+.front-slider,
+.category-shortcut,
+.focus-class,
+.best-class,
+.early-bird,
+.blog,
+.slogan,
+.tip-tech,
+footer {
+  display: none;
+}
+
+/* ########################## Common CSS ########################## */ 
+section {
+}
