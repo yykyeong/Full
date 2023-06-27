@@ -330,54 +330,54 @@ header .mega-navi .mega-navi-inner .mega-navi-item .mega-navi-item-wrap a:hover 
 .focus-class .focus-class-inner .focus-class-content {
   margin-bottom: 40px;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items {
+.focus-class-items {
   /* Custom CSS : Slick - 아이템 간격 조절 */
   /* Custom CSS : Slick - 다음 이전 아이콘 */
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .slide-list {
+.focus-class-items .slide-list {
   margin: 0 -5px;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .slick-slide {
+.focus-class-items .slick-slide {
   margin: 0 5px;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .slick-next:before,
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .slick-prev:before {
+.focus-class-items .slick-next:before,
+.focus-class-items .slick-prev:before {
   content: "\f285";
   font-family: bootstrap-icons;
   color: #999999;
   display: inline-block;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .slick-prev:before {
+.focus-class-items .slick-prev:before {
   transform: rotateY(180deg);
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .thum {
+.focus-class-items .focus-class-item .thum {
   width: 100%;
   height: 160px;
   position: relative;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .thum img {
+.focus-class-items .focus-class-item .thum img {
   border-radius: 5px;
   object-fit: cover;
   width: inherit;
   height: inherit;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .thum .like {
+.focus-class-items .focus-class-item .thum .like {
   position: absolute;
   top: 10px;
   right: 10px;
   font-style: normal;
   cursor: pointer;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .thum .like::before {
+.focus-class-items .focus-class-item .thum .like::before {
   content: "\f417";
   font-family: bootstrap-icons;
   color: #FFFFFF;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .thum .like.active::before {
+.focus-class-items .focus-class-item .thum .like.active::before {
   content: "\f415";
   color: #ED2040;
 }
-.focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .thum .badge {
+.focus-class-items .focus-class-item .thum .badge {
   position: absolute;
   bottom: 10px;
   right: 0;
@@ -711,5 +711,95 @@ footer .footer-inner .copyright-wrap .sns a {
   margin: 3px;
 }
 footer .footer-inner .copyright-wrap .sns a:hover .bi {
+  color: #FFFFFF;
+}
+
+.category-class .category-class-inner .category-class-main {
+  height: 120px;
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.category-class .category-class-inner .category-class-main h2 {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  color: #FFFFFF;
+  font-family: "SpoqaHanSansNeo-Regular";
+}
+.category-class .category-class-inner .category-class-main img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+.category-class .category-class-inner .category-class-detail {
+  margin: 30px 0;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #DDDDDD;
+}
+.category-class .category-class-inner .category-class-detail h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.category-class .category-class-inner .category-class-detail .category-shortcut-btn-group .btn-shortcut {
+  border: none;
+  font-size: 13px;
+  border-radius: 30px;
+  padding: 5px 15px;
+  margin-right: 7px;
+  background-color: transparent;
+  border: 1px solid #BDBDBD;
+}
+.category-class .category-class-inner .category-class-detail .category-shortcut-btn-group .btn-shortcut.active {
+  background-color: #333333;
+  color: #FFFFFF;
+}
+.category-class .category-class-inner .category-class-sort {
+  margin-bottom: 30px;
+}
+.category-class .category-class-inner .category-class-sort > * {
+  font-size: 14px;
+  border: 1px solid #EEEEEE;
+  cursor: pointer;
+  height: 40px;
+  width: 110px;
+  margin-right: 5px;
+  text-align: center;
+}
+.category-class .category-class-inner .category-class-sort select {
+  appearance: none;
+  background: url("/images/icon-select.svg") no-repeat center right 10px;
+  background-size: 12px;
+}
+.category-class .category-class-inner .category-class-sort button {
+  background-color: transparent;
+  border-radius: 3px;
+}
+.category-class .category-class-inner .category-class-sort button.btn-earlybird {
+  border-color: #FF4C79;
+  color: #FF4C79;
+}
+.category-class .category-class-inner .category-class-wrap .focus-class-items {
+  margin-bottom: 40px;
+}
+.category-class .category-class-inner .paging {
+  display: flex;
+  justify-content: center;
+}
+.category-class .category-class-inner .paging button {
+  background-color: transparent;
+  border: none;
+}
+.category-class .category-class-inner .paging > button {
+  margin: 0 10px;
+  font-size: 18px;
+  transform: translateY(-3px);
+}
+.category-class .category-class-inner .paging .btn-paging-group .btn-paging.active {
+  background-color: #333333;
+  border-radius: 3px;
   color: #FFFFFF;
 }

@@ -1,802 +1,116 @@
 /* Import Local SCSS Files */
-@import "reset", "variables", "fonts";
+@import "reset", "variables", "fonts", "main", "category-main";
 
-* {
-  font-family: $primary-kr;
-  color: $dark-black;
-}
-
-body {
-  font-weight: 300;
-  margin: 0;
-  font-size: 15px;
-}
-
-
-/* ########################## Common CSS ########################## */
-section:not(.front-slider) {
-  padding: 65px 0;
-}
-[class*=inner] { // class 중에 inner 들어가 있는 것들
-  width: 1160px;
-  margin: auto;
-}
-.front-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: $secondary-kr;
-  height: 50px;
-  margin-bottom: 20px;
-  h2 {
-    font-size: 24px;
-    font-weight: 500;
-  }
-  a {
-    font-size: 14px;
-    color: $dim-black;
-  }
-}
-
-/* header */
-header {
-  display: flex;
-  justify-content: center;
-  background-color: $white;
-  border-bottom: 1px solid $silver-gray;
-  position: relative;
-  width: 100%;
-  z-index: 999;
-  &.active {
-    position: fixed;
-    box-shadow: 0 0 5px rgba($dark-black, .1);
-    border-bottom: none;
-  }
-  .header-inner {
-    width: 1160px;
-    // logo-search
-    .logo-search {
-      display: flex;
-      gap: 20px;
-      padding: 20px 0;
-
-      .logo {
-        img {}
-      }
-
-      .search {
-        width: 520px;
-        position: relative;
-
-        input[type=text] {
-          width: 100%;
-          background-color: $silver-gray;
-          padding: 7px;
-          border-radius: 50px;
-          padding-left: 15px;
-
-          &:focus::placeholder {
-            visibility: hidden;
-          }
-
-          &:focus {
-            // border: 1px solid rgba($royalblue, .5); 덜컹거리니까 색상만 변경
-            border-color: rgba($royalblue, .5);
-            background-color: $white;
-            box-shadow: 0 0 5px rgba($royalblue, .5);
-          }
-
-          &:focus+img {
-            filter: invert(24%) sepia(89%) saturate(4498%) hue-rotate(201deg) brightness(99%) contrast(104%);
-          }
-        }
-
-        img {
-          position: absolute;
-          right: 15px;
-          top: 50%;
-          transform: translateY(-50%);
-          cursor: pointer;
-        }
-      }
-
-      // 로그인 전  UI
-      .login-register-buttons {
-        margin-left: auto;
-
-        button {
-          border: 1px solid $dim-gray;
-          border-radius: 5px;
-          padding: 5px 10px;
-          background-color: transparent;
-          margin-right: 5px;
-          &.btn-login {}
-
-          &.btn-register {
-            background-color: $forestgreen;
-            color: $white;
-            border: transparent;
-          }
-        }
-      }
-
-      // 로그인 후  UI
-      .user-alarm {
-        margin-left: auto;
-        display: none;
-        span {
-          margin-right: 10px;
-          vertical-align: middle;
-          width: 20px; // 동그라미 명시적으로 하려고 
-          position: relative;
-
-          .bi {
-            font-size: 20px;
-          }
-
-          em {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: $tomato;
-            border-radius: 50%;
-            right: 0px;
-
-            // before에 flex 안주고 lh15, tac 줘도 됨
-            &::before {
-              content: attr(data-count);
-              color: $white;
-              font-style: normal;
-              font-size: 11px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
-          }
-        }
-
-        .avatar {
-          img {
-            height: 28px;
-            border-radius: 50%;
-          }
-        }
-      }
-    }
-
-    // gnb
-    .gnb {
-      height: 50px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      a {
-        font-weight: 400;
-        color: $dim-black;
-
-        &::after {
-          content: '·';
-          padding-left: 7px;
-        }
-
-        &:last-child::after {
-          display: none;
-        }
-
-        &:hover:not(.trigger) {
-          color: $crimson;
-        }
-      }
-
-      .trigger {
-        &::before {
-          content: '';
-          background-image: url('/images/icon-category.png');
-          width: 20px;
-          height: 18px;
-          display: inline-block;
-          margin-right: 5px;
-          transform: translateY(4px);
-        }
-      }
-    }
-  }
-
-  .mega-navi {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: $dark-black;
-    width: 100%;
-    display: none;
-    .mega-navi-inner {
-      width: 1160px;
-      margin: auto;
-      // 부모에 flex 못주는 이유는 none을 줘야하기 때문에 마진으로 중앙정렬
-      padding: 20px 0;
-      display: flex;
-      justify-content: space-between;
-
-      display: flex;
-      justify-content: space-between;
-
-      .mega-navi-item {
-        color: $white;
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 1.8em;
-        flex: 1;
-
-        b {
-          color: $white;
-          font-weight: 500;
-        }
-
-        .mega-navi-item-wrap {
-          a {
-            display: block;
-            color: $dark-gray;
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-    }
-  }
-
-}
-
-/* front-slider */
-.front-slider {
-  .front-slider-items {
-    .front-slider-item {
-      cursor: pointer;
-      .front-slider-item-wrap {
-        width: 1160px;
-        height: 400px;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .desc {
-          font-family: $secondary-kr;
-          b {
-            font-size: 16px;
-            font-weight: normal;
-            color: $crimson;
-          }
-          h1 {
-            font-size: 34px;
-            margin: 15px 0;
-          }
-          span {
-            font-size: 15px;
-          }
-        }
-        .pic {
-          img {
-            height: 350px;
-          }
-        }
-      }
-    }
-  }
-}
-
-/* category-shortcut */
-.category-shortcut {
-  .category-shortcut-inner {
-    .category-shortcut-items {
-      display: flex;
-      gap: 20px;
-      .category-shortcut-item {
-        flex: 1;
-        height: 130px;
-        box-shadow: 0 0 20px rgba($black, .5);
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        em {
-          font-size: 20px;
-          color: $dark-black;
-          width: 45px;
-          height: 45px;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          .bi {
-            transform: translateY(-2px);
-          }
-        }
-        span {
-          font-size: 16px;
-        }
-        &:nth-child(1) em {
-          background-color: rgba($royalblue, .2);
-        }
-        &:nth-child(2) em {
-          background-color: rgba($orange, .2);
-        }
-        &:nth-child(3) em {
-          background-color: rgba($tomato, .2);
-        }
-        &:nth-child(4) em {
-          background-color: rgba($forestgreen, .2);
-        }
-        &:nth-child(5) em {
-          background-color: rgba($crimson, .2);
-        }
-        &:nth-child(6) em {
-          background-color: rgba($turquoise, .2);
-        }
-      }
-    }
-  }
-}
-
-/* focus-class */
-.focus-class {
-  background-color: $cloudy-gray;
-  .focus-class-inner {
-    .focus-class-content {
-      margin-bottom: 40px;
-      .focus-class-items {
-        /* Custom CSS : Slick - 아이템 간격 조절 */
-        .slide-list {
-          margin: 0 -5px;
-        }
-        .slick-slide {
-          margin: 0 5px;
-        }
-        /* Custom CSS : Slick - 다음 이전 아이콘 */
-        .slick-next:before,
-        .slick-prev:before {
-          content: '\F285';
-          font-family: $bs-font;
-          color: $light-black;
-          display: inline-block; // 밑에 transform 적용시키려고
-        }
-        .slick-prev:before {
-          transform: rotateY(180deg);
-        }
-        .focus-class-item {
-          .thum {
-            width: 100%;
-            height: 160px;
-            position: relative;
-            img {
-              border-radius: 5px;
-              object-fit: cover;
-              // object-fit 조건 : 부모요소 너비높이 상속받아야함
-              width: inherit;
-              height: inherit;
-            }
-            .like {
-              position: absolute;
-              top: 10px;
-              right: 10px;
-              font-style: normal;
-              cursor: pointer;
-              &::before {
-                content: '\F417';
-                font-family: $bs-font;
-                color: $white;
-              }
-              &.active::before {
-                content: '\F415';
-                color: $crimson;
-              }
-            }
-            .badge {
-              position: absolute;
-              bottom: 10px;
-              right: 0;
-              background-color: $crimson;
-              color: $white;
-              font-size: 12px;
-              padding: 2px 8px;
-              border-radius: 3px 0 0 3px;
-            }
-          }
-          @at-root .overview { // @at-root 밖으로
-            margin-top: 10px;
-            h4 {
-              font-weight: 400;
-            }
-            .class-info {
-              font-size: 13px;
-              color: $light-black;
-            }
-            .class-price {
-              font-size: 16px;
-              margin-bottom: 3px;
-              word-spacing: 10px;
-              // >  * {
-              //   margin-right: 10px;
-              // }
-              .sale {
-                color: $crimson;
-                font-weight: 400;
-              }
-              .price-prev {
-                color: $dark-gray;
-              }
-              .price-current {
-                font-weight: 400;
-              }
-            }
-            .class-review {
-              .stars {
-                word-spacing: -2px;
-                .bi {
-                  color: $orange;
-                }
-              }
-              .rating {
-                margin-left: 5px;
-                &::after {
-                  content: '|';
-                  color: $dark-gray;
-                  font-size: 10px;
-                  margin-left: 5px;
-                  transform: translateY(-2px); // 인라인요소는 처리안되서 바꿔줘야함
-                  display: inline-block;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-/* best-class */
-.best-class {
-  .best-class-inner {
-    .best-class-content {
-      .best-class-wrap {
-        display: flex;
-        gap: 25px;
-        .invite-banner {
-          img {
-            height: 320px;
-          }
-        }
-        .best-class-items-outer {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          .best-class-items {
-            display: flex;
-            gap: 15px;
-            .best-class-item {
-              display: flex;
-              gap: 15px;
-              flex: 1;
-              cursor: pointer;
-              .thum {
-                width: 130px;
-                img {
-                  object-fit: cover;
-                  width: inherit;
-                  height: inherit;
-                  border-radius: 3px;
-                }
-              }
-              .overview {
-                margin-top: 0;
-                display: flex;
-                flex-direction: column;
-                .class-price {
-                  margin-top: auto;
-
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-/* early-bird */
-.early-bird {
-  background-color: $cloudy-gray;
-  .early-bird-inner {
-    .early-bird-content {
-      .coundown-wrap {
-        width: 600px;
-        margin: auto;
-        margin-bottom: 50px;
-        text-align: center;
-        .early-bird-info {
-          display: block;
-          font-size: 13px;
-        }
-      }
-      .early-bird-banner {
-        display: flex;
-        background-color: rgba($orange, .1);
-        border-radius: 20px;
-        padding: 20px 100px;
-        align-items: center;
-        justify-content: space-between;
-        .banner-about {
-          h1 {
-            font-size: 32px;
-            font-weight: bold;
-            span {
-              font-weight: 500;
-              display: block;
-              font-size: 0.9em;
-            }
-          }
-          .hash-tag {
-            color: $forestgreen;
-            word-spacing: 5px;
-          }
-        }
-        .banner-thum {
-          img {}
-        }
-      }
-    }
-  }
-}
-
-/*################## CountDown ######################*/
-#early-bird-countdown {
-  font-size: 30px;
-  margin-bottom: 30px;
-  b {
-    font-weight: normal;
-    color: $crimson;
-  }
-  em {
-    font-style: normal;
-    background-color: $black;
-    color: $white;
-    padding: 0 5px;
-    border-radius: 0 5px;
-    margin: 5px;
-    position: relative;
-    &::after {
-      position: absolute;
-      font-size: 12px;
-      text-align: center;
-      left: 0;
-      top: 100%;
-      color: #000;
+.category-class {
+  .category-class-inner {
+    .category-class-main {
+      height: 120px;
       width: 100%;
-    }
-    &:nth-of-type(1)::after {
-      content: 'hrs';
-    }
-    &:nth-of-type(2)::after {
-      content: 'min';
-    }
-    &:nth-of-type(3)::after {
-      content: 'sec';
-    }
-  }
-}
-
-/* blog */
-.blog {
-  .blog-inner {
-    .blog-content {
-      .blog-items {
-        display: flex;
-        gap: 15px;
-        .blog-item {
-          .thum {
-            width: 100%;
-            height: 200px;
-            img {
-              object-fit: cover;
-              width: inherit;
-              height: inherit;
-              border-radius: 20px;
-              border: 1px solid $silver-gray;
-            }
-          }
-          .desc {
-            .blog-sort {
-              font-size: 13px;
-              color: $orangered;
-            }
-            .blog-outline {
-              h4 {
-                font-size: 16px;
-              }
-              p {
-                color: $dim-black;
-                margin: 5px 0;
-              }
-            }
-            .blog-writer {
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              margin-top: 10px;
-              .writer-avatar {
-                font-size: 12px;
-                img {
-                  width: 40px;
-                  border-radius: 50%;
-                }
-              }
-              .writer-info {
-                font-size: 12px;
-                b {
-                  font-weight: 500;
-                }
-                .date-comment {
-                  margin-top: 5px;
-                  span {
-                    margin-right: 5px;
-                  }
-                }
-              }
-            }
-          }
-        }
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      h2 {
+        position: absolute;
+        left: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 28px;
+        color: $white;
+        font-family: $secondary-kr;
+      }
+      img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
       }
     }
-    
-  }
-}
-
-/* slogan */
-.slogan {
-  background-color: rgba($turquoise, .2);
-  padding: 35px 0 !important; // section.slogan 선택자 방식으로 해야 인식함. 번거로우니까 !important
-  .slogan-inner {
-    .slogan-content {
-      text-align: center;
-      h1 {
-        font-size: 32px;
-        font-weight: 500;
+    .category-class-detail {
+      margin: 30px 0;
+      padding-bottom: 30px;
+      border-bottom: 1px solid $dim-gray;
+      h3 {
+        font-size: 20px;
         margin-bottom: 15px;
       }
-      span {
-        font-size: 20px;
-        font-weight: 400;
-        em {
-          font-style: normal;
-          color: $tomato;
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-}
-
-/* tip-tech */
-.tip-tech {
-  .tip-tech-inner {
-    .tip-tech-content {
-      .tip-tech-wrap {
-        .tip-tech-items {
-          display: flex;
-          gap: 30px;
-          margin: 20px 0;
-          &:last-child .tip-tech-item {
-            border: none;
-          }
-          .tip-tech-item {
-            flex: 1;
-            display: flex;
-            gap: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid $silver-gray;
-            .tip-tech-info {
-              .tip-tech-sort {
-                font-size: 12px;
-                color: $forestgreen;
-                font-weight: 500;
-              }
-              h3 {
-                font-size: 16px;
-              }
-              p {
-                margin: 0;
-              }
-            }
-            .thum {
-              img {
-                width: 110px;
-                border-radius: 5px;
-                border: 1px solid $silver-gray;
-              }
-            }
-          }
-        }
-      }
-      .btn-tip-tech {
-        font-size: 16px;
-        border: 1px solid $dim-gray;
-        font-weight: normal;
-        padding: 3px 25px;
-        border-radius: 30px;
-        display: block;
-        margin: 30px auto;
-        text-align: center;
-        // 버튼 중앙
-        width: min-content;
-        white-space: nowrap;
-      }
-    }
-  }
-}
-
-
-/* footer */
-footer {
-  background-color: $dim-black;
-  padding: 60px 0;
-  font-size: 13px;
-  * {
-    color: $dark-gray;
-  }
-  .footer-inner {
-    .lnb-wrap {
-      display: flex;
-      gap: 100px;
-      border-bottom: 1px solid $silver-black;
-      padding-bottom: 40px;
-      .footer-slogan {
-        h2 {
-          color: $silver-gray;
-          font-family: $secondary-kr;
-        }
-      }
-      .lnb {
-        display: flex;
-        flex: 1;
-        justify-content: space-between;
-        .link-item {
-          .link-item-title {
-            color: $silver-gray;
-          }
-          .link-item-content {
-            a {
-              display: block;
-              &:hover {
-                text-decoration: underline;
-              } 
-            }
-          }
-        }
-      }
-    }
-    .copyright-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 30px;
-      .company-info-trigger {}
-      address {
-        font-style: normal;
-        p {}
-      }
-      .sns {
-        a {
-          font-size: 20px;
-          margin: 3px;
-          &:hover .bi {
+      .category-shortcut-btn-group {
+        .btn-shortcut {
+          border: none;
+          font-size: 13px;
+          border-radius: 30px;
+          padding: 5px 15px;
+          margin-right: 7px;
+          background-color: transparent;
+          border: 1px solid $dark-gray;
+          &.active {
+            background-color: $dark-black;
             color: $white;
           }
         }
       }
+    }
+    .category-class-sort {
+      > * {
+        font-size: 14px;
+        border: 1px solid $silver-gray;
+        cursor: pointer;
+        height: 40px;
+        width: 110px;
+        margin-right: 5px;
+        text-align: center;
+      }
+      margin-bottom: 30px;
+      select { // before, after 가질 수 없음
+        appearance: none;
+        background: url('/images/icon-select.svg') no-repeat center right 10px;
+        background-size: 12px;
+        option {}
+      }
+      button {
+        background-color: transparent;
+        border-radius: 3px;
+        &.btn-earlybird {
+          border-color: $tomato;
+          color: $tomato;
+        }
+        &.btn-event {}
+      }
+
+    }
+    .category-class-wrap {
+      .focus-class-items {
+        margin-bottom: 40px;
+        .focus-class-item {
+          .thum {
+            img {}
+            span {}
+          }
+          .desc {}
+        }
+      }
+    }
+    .paging {
+      display: flex;
+      justify-content: center;
+      button {
+        background-color: transparent;
+        border: none;
+      }
+      > button {
+        margin: 0 10px;
+        font-size: 18px;
+        transform: translateY(-3px);
+      }
+      .prev-list {}
+      .btn-paging-group {
+        .btn-paging {
+          &.active {
+            background-color: $dark-black;
+            border-radius: 3px;
+            color: $white;
+          }
+        }
+      }
+      .next-list {}
     }
   }
 }

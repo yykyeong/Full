@@ -36,6 +36,12 @@ $(function(){
     $(this).toggleClass('active')
   })
 
+  /* Category Detail Buttons */
+  $('.btn-shortcut').click(function(){
+    $(this).addClass('active');
+    $(this).siblings().removeClass('active');
+  });
+
   /* Front Slider */
   $('.front-slider-items').slick({
     infinite: true, // 마지막 슬라이드 다음에 처음으로 돌아가기
