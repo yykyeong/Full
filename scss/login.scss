@@ -1,5 +1,5 @@
 
-/* 로그인 */
+/* 로그인 모달 */
 .member-login-overlay {
   position: fixed;
   background-color: rgba($dark-black, .5);
@@ -87,7 +87,7 @@
       font-size: 12px;
       text-align: center;
     }
-    .btn-modal-close {
+    @at-root .btn-modal-close {
       position: absolute;
       right: 20px;
       top: 10px;

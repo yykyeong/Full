@@ -8,7 +8,9 @@ body {
   margin: 0;
   font-size: 15px;
 }
-
+body.active {
+  overflow: hidden; // 모달 나왔을 때 뒤에 스크롤 안되게
+}
 
 /* ########################## Common CSS ########################## */
 section:not(.front-slider) {

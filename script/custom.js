@@ -27,9 +27,11 @@ $(function(){
     /* 로그인 버튼 눌렀을 때 모달 */
     $('.btn-login, .login-member a').click(function(){
       $('.member-login-overlay').fadeIn();
+      $('body').addClass('active');
     }) 
     $('.member-login .btn-modal-close').click(function(){
       $('.member-login-overlay').fadeOut();
+      $('body').removeClass('active');
     })
   });
 
@@ -78,6 +80,20 @@ $(function(){
     // attr('속성명') getter
     // attr('속성명', '값') setter
   })
+
+  /* 공유하기 링크 */
+  $('.btn-sidebar-badge.share').click(function(){
+    $('.class-share-overlay').fadeIn();
+    $('body').addClass('active'); // 스크롤 안되게
+  })
+  $('.class-share .btn-modal-close').click(function(){
+    $('.class-share-overlay').fadeOut();
+    $('body').removeClass('active');
+  });
+  $('.share-link').click(function(){
+    $('.copied-link').show().delay(1000).fadeOut();
+  });
+
 
   /* Front Slider */
   $('.front-slider-items').slick({
