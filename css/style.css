@@ -803,3 +803,225 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
   border-radius: 3px;
   color: #FFFFFF;
 }
+.take-course {
+  background-color: #F5F5F5;
+}
+.take-course .take-course-inner {
+  display: flex;
+  gap: 30px;
+}
+.take-course .take-course-inner > div {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+}
+.take-course .take-course-inner .cart-wrap {
+  flex: 1;
+}
+.payment-headline {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.take-course .take-course-inner .cart-wrap .cart-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 15px;
+}
+.take-course .take-course-inner .cart-wrap .cart-header span {
+  font-weight: 400;
+}
+.take-course .take-course-inner .cart-wrap .cart-header span .cart-chk-all {
+  width: 18px;
+  height: 18px;
+  accent-color: #FD5631;
+  transform: translateY(3px);
+  margin-right: 5px;
+}
+.take-course .take-course-inner .cart-wrap .cart-header span em {
+  font-style: normal;
+  color: #FD5631;
+}
+.take-course .take-course-inner .cart-wrap .cart-header .btn-all-clear {
+  font-size: 13px;
+  border: 1px solid #DDDDDD;
+  background-color: transparent;
+  border-radius: 3px;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item {
+  display: flex;
+  border-bottom: 1px solid #EEEEEE;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item:last-child {
+  border: none;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .check-status {
+  width: 30px;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .check-status .cart-chk {
+  width: 18px;
+  height: 18px;
+  accent-color: #FD5631;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .thum {
+  width: 160px;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .thum img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview {
+  flex: 1;
+  padding-left: 15px;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-header {
+  display: flex;
+  justify-content: space-between;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-header h4 {
+  font-size: 14px;
+  color: #ED2040;
+  font-weight: 400;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-header .btn-clear {
+  border: none;
+  background-color: transparent;
+  font-size: 1.1em;
+  color: #999999;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail {
+  display: flex;
+  gap: 15px;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail .cart-overview-info {
+  min-height: 75px;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail .cart-overview-info .class-subject {
+  font-size: 14px;
+  font-weight: 500;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail .cart-overview-info .mentor-info {
+  display: block;
+  font-size: 13px;
+  color: #999999;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail .cart-overview-info .mentor-info em {
+  font-style: normal;
+  color: #2ECC71;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail .cart-overview-price {
+  flex: 1;
+  text-align: right;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail .cart-overview-price .sale {
+  color: #FD5631;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail .cart-overview-price .price-prev {
+  color: #999999;
+}
+.take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail .cart-overview-price .price-current {
+  font-size: 16px;
+  font-weight: 500;
+}
+.take-course .take-course-inner .payment {
+  flex-basis: 330px;
+  font-size: 16px;
+  max-height: 620px;
+}
+.take-course .take-course-inner .payment > div {
+  margin-bottom: 30px;
+}
+.take-course .take-course-inner .payment .price-total-wrap > div {
+  display: flex;
+  justify-content: space-between;
+}
+.take-course .take-course-inner .payment .price-total-wrap > div b {
+  font-weight: 400;
+}
+.take-course .take-course-inner .payment .price-total-wrap .current-price {
+  border-bottom: 1px solid #EEEEEE;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+.take-course .take-course-inner .payment .price-total-wrap .current-price span em {
+  font-style: normal;
+  color: #2ECC71;
+  font-size: 20px;
+}
+.take-course .take-course-inner .payment .price-total-wrap .discount-amount span em {
+  color: #FD5631;
+  font-style: normal;
+}
+.take-course .take-course-inner .payment .mobile-confirm-wrap > div {
+  display: flex;
+  gap: 5px;
+}
+.take-course .take-course-inner .payment .mobile-confirm-wrap input[type=tel] {
+  border: 1px solid #EEEEEE;
+  border-radius: 3px;
+  padding: 5px;
+  flex: 3;
+}
+.take-course .take-course-inner .payment .mobile-confirm-wrap input[type=tel]::placeholder {
+  font-size: 12px;
+  color: #999999;
+}
+.take-course .take-course-inner .payment .mobile-confirm-wrap .btn-request {
+  border: 1px solid #DDDDDD;
+  background-color: transparent;
+  border-radius: 3px;
+  padding: 5px;
+  flex: 1;
+}
+.take-course .take-course-inner .payment .payment-method-wrap > div {
+  margin-bottom: 5px;
+}
+.take-course .take-course-inner .payment .payment-method-wrap > div .free-interest {
+  font-size: 12px;
+  font-weight: 400;
+  color: #FD5631;
+  margin-left: 3px;
+}
+.take-course .take-course-inner .payment .payment-method-wrap > div label {
+  cursor: pointer;
+}
+.take-course .take-course-inner .payment .payment-method-wrap > div label input[type=radio] {
+  display: none;
+}
+.take-course .take-course-inner .payment .payment-method-wrap > div label input[type=radio] + em {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  transform: translateY(3px);
+  background: url("/images/icon-custom-radio.png") no-repeat;
+  background-position: left;
+}
+.take-course .take-course-inner .payment .payment-method-wrap > div label input[type=radio]:checked + em {
+  background-position: right;
+}
+.take-course .take-course-inner .payment .payment-method-wrap > div label img {
+  height: 20px;
+  margin-right: 5px;
+  transform: translateY(3px);
+}
+.take-course .take-course-inner .payment .btn-payment-final {
+  background-color: #FD5631;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
