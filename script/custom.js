@@ -13,6 +13,18 @@ $(function(){
   });
   $('.footer-include').load('/include/footer.html');
 
+  /* 회원가입 */
+  $('.toggle-pw').click(function(){
+    // 아이콘 모양 변경
+    $(this).toggleClass('bi-eye')
+    // 인풋타입 변경
+    var inputType = $(this).parent().children('input').attr('type');
+    if(inputType == 'password'){
+      $(this).parent().children('input').attr('type','text');
+    } else {
+      $(this).parent().children('input').attr('type','password');
+    }
+  }) 
 
   /* Scroll Header Fixed */
   $(window).scroll(function(){

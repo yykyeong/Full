@@ -1025,3 +1025,94 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
   color: #FFFFFF;
   border-radius: 5px;
 }
+
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup .member-register {
+  width: 360px;
+}
+.signup .member-register .member-account {
+  text-align: center;
+}
+.signup .member-register .member-account .login-slogan {
+  font-family: "SpoqaHanSansNeo-Regular";
+  font-weight: bold;
+  font-size: 20px;
+}
+.signup .member-register .member-account .login-slogan em {
+  color: #006BE5;
+  font-style: normal;
+}
+.signup .member-register .member-account img {
+  margin: 30px 0;
+}
+.signup .member-register .login-field div {
+  position: relative;
+  margin: 15px 0;
+}
+.signup .member-register .login-field div :is(input[type=email], input[type=password], input[type=text]) {
+  border: 1px solid #DDDDDD;
+  width: 100%;
+  padding: 13px;
+  border-radius: 5px;
+}
+.signup .member-register .login-field div :is(input[type=email], input[type=password], input[type=text])::placeholder {
+  color: #BDBDBD;
+}
+.signup .member-register .login-field div :is(input[type=email], input[type=password], input[type=text]):focus {
+  border: 1px solid #2ECC71;
+}
+.signup .member-register .login-field div .bi {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.signup .member-register .login-field .btn-member-primary {
+  background-color: #2ECC71;
+  border: none;
+  color: #FFFFFF;
+  padding: 11px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+.signup .member-register .agreement {
+  text-align: center;
+  font-size: 12px;
+  color: #777777;
+  margin: 20px 0;
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 20px;
+}
+.signup .member-register .agreement label {
+  cursor: pointer;
+}
+.signup .member-register .agreement label input[type=checkbox] {
+  display: none;
+}
+.signup .member-register .agreement label input[type=checkbox]:checked + em::before {
+  content: "\f26d";
+}
+.signup .member-register .agreement label em::before {
+  content: "\f584";
+  font-family: bootstrap-icons;
+  font-style: normal;
+  margin-right: 3px;
+  font-size: 12px;
+  color: #777777;
+  transform: translateY(2px);
+  display: inline-block;
+}
+.signup .member-register .login-member {
+  text-align: center;
+  font-size: 13px;
+  color: #555555;
+}
+.signup .member-register .login-member a {
+  text-decoration: underline;
+}

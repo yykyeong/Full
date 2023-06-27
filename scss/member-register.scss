@@ -1,0 +1,93 @@
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .member-register {
+    width: 360px; 
+    .member-account {
+      text-align: center;
+      .login-slogan {
+        font-family: $secondary-kr;
+        font-weight: bold;
+        font-size: 20px;
+        em {
+          color: $royalblue;
+          font-style: normal;
+        }
+      }
+      img {
+        margin: 30px 0;
+      }
+    }
+    .login-field {
+      div {
+        position: relative;
+        margin: 15px 0;
+        :is(input[type=email], input[type=password], input[type=text]) {
+          border: 1px solid $dim-gray;
+          width: 100%;
+          padding: 13px;
+          border-radius: 5px;
+          &::placeholder { // is() 가상선택자 사용했기때문에 사용가능
+            color: $dark-gray;
+          }
+          &:focus {
+            border: 1px solid $forestgreen;
+          }
+        }
+        .bi {
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          cursor: pointer;
+        }
+      }
+      .toogle-pw {}
+      .btn-member-primary {
+        background-color: $forestgreen;
+        border: none;
+        color: $white;
+        padding: 11px;
+        border-radius: 5px;
+        font-size: 16px;
+        width: 100%;
+      }
+    }
+    .agreement {
+      text-align: center;
+      font-size: 12px;
+      color: $silver-black;
+      margin: 20px 0;
+      border-bottom: 1px solid $dim-gray;
+      padding-bottom: 20px;
+      label {
+        cursor: pointer;
+        input[type=checkbox] {
+          display: none;
+          &:checked + em::before {
+            content: '\F26D';
+          }
+        }
+        em::before {
+          content: '\F584';
+          font-family: $bs-font;
+          font-style: normal;
+          margin-right: 3px;
+          font-size: 12px;
+          color: $silver-black;
+          transform: translateY(2px);
+          display: inline-block;
+        }
+      }
+    }
+    .login-member {
+      text-align: center;
+      font-size: 13px;
+      color: $dim-black;
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
