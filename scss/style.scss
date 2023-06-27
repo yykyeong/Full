@@ -45,7 +45,13 @@ header {
   background-color: $white;
   border-bottom: 1px solid $silver-gray;
   position: relative;
-
+  width: 100%;
+  z-index: 999;
+  &.active {
+    position: fixed;
+    box-shadow: 0 0 5px rgba($dark-black, .1);
+    border-bottom: none;
+  }
   .header-inner {
     width: 1160px;
     // logo-search
@@ -74,7 +80,8 @@ header {
           }
 
           &:focus {
-            border: 1px solid rgba($royalblue, .5);
+            // border: 1px solid rgba($royalblue, .5); 덜컹거리니까 색상만 변경
+            border-color: rgba($royalblue, .5);
             background-color: $white;
             box-shadow: 0 0 5px rgba($royalblue, .5);
           }
@@ -102,7 +109,7 @@ header {
           border-radius: 5px;
           padding: 5px 10px;
           background-color: transparent;
-
+          margin-right: 5px;
           &.btn-login {}
 
           &.btn-register {
@@ -116,7 +123,7 @@ header {
       // 로그인 후  UI
       .user-alarm {
         margin-left: auto;
-
+        display: none;
         span {
           margin-right: 10px;
           vertical-align: middle;

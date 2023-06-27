@@ -1,5 +1,28 @@
 $(function(){
 
+  /* Include Files */
+  $('.header-include').load('/include/header.html', function(){
+
+    /* Mega Navigation */
+    $('.trigger').click(function(){
+      $('.mega-navi').stop().slideToggle()
+    })
+    $('section').click(function(){
+      $('.mega-navi').stop().slideUp()
+    })
+  });
+  $('.footer-include').load('/include/footer.html');
+
+
+  /* Scroll Header Fixed */
+  $(window).scroll(function(){
+    if($(this).scrollTop() > 200) {
+      $('header').addClass('active')
+    } else {
+      $('header').removeClass('active')
+    }
+  })
+
   /* Countdown*/
   $("#early-bird-countdown")
   .countdown("2023/11/01", function(event) {

@@ -82,6 +82,13 @@ header {
   background-color: #FFFFFF;
   border-bottom: 1px solid #EEEEEE;
   position: relative;
+  width: 100%;
+  z-index: 999;
+}
+header.active {
+  position: fixed;
+  box-shadow: 0 0 5px rgba(51, 51, 51, 0.1);
+  border-bottom: none;
 }
 header .header-inner {
   width: 1160px;
@@ -106,7 +113,7 @@ header .header-inner .logo-search .search input[type=text]:focus::placeholder {
   visibility: hidden;
 }
 header .header-inner .logo-search .search input[type=text]:focus {
-  border: 1px solid rgba(0, 107, 229, 0.5);
+  border-color: rgba(0, 107, 229, 0.5);
   background-color: #FFFFFF;
   box-shadow: 0 0 5px rgba(0, 107, 229, 0.5);
 }
@@ -128,6 +135,7 @@ header .header-inner .logo-search .login-register-buttons button {
   border-radius: 5px;
   padding: 5px 10px;
   background-color: transparent;
+  margin-right: 5px;
 }
 header .header-inner .logo-search .login-register-buttons button.btn-register {
   background-color: #2ECC71;
@@ -136,6 +144,7 @@ header .header-inner .logo-search .login-register-buttons button.btn-register {
 }
 header .header-inner .logo-search .user-alarm {
   margin-left: auto;
+  display: none;
 }
 header .header-inner .logo-search .user-alarm span {
   margin-right: 10px;
