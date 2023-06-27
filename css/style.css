@@ -49,8 +49,6 @@ body {
 }
 
 /* Temporary CSS */
-.blog,
-.slogan,
 .tip-tech,
 footer {
   display: none;
@@ -543,6 +541,80 @@ header .mega-navi .mega-navi-inner .mega-navi-item .mega-navi-item-wrap a:hover 
 }
 
 /* blog */
+.blog .blog-inner .blog-content .blog-items {
+  display: flex;
+  gap: 15px;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .thum {
+  width: 100%;
+  height: 200px;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .thum img {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+  border-radius: 20px;
+  border: 1px solid #EEEEEE;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .desc .blog-sort {
+  font-size: 13px;
+  color: #FD5631;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .desc .blog-outline h4 {
+  font-size: 16px;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .desc .blog-outline p {
+  color: #555555;
+  margin: 5px 0;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .desc .blog-writer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .desc .blog-writer .writer-avatar {
+  font-size: 12px;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .desc .blog-writer .writer-avatar img {
+  width: 40px;
+  border-radius: 50%;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .desc .blog-writer .writer-info {
+  font-size: 12px;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .desc .blog-writer .writer-info b {
+  font-weight: 500;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .desc .blog-writer .writer-info .date-comment {
+  margin-top: 5px;
+}
+.blog .blog-inner .blog-content .blog-items .blog-item .desc .blog-writer .writer-info .date-comment span {
+  margin-right: 5px;
+}
+
 /* slogan */
+.slogan {
+  background-color: rgba(0, 210, 211, 0.2);
+  padding: 35px 0 !important;
+}
+.slogan .slogan-inner .slogan-content {
+  text-align: center;
+}
+.slogan .slogan-inner .slogan-content h1 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.slogan .slogan-inner .slogan-content span {
+  font-size: 20px;
+  font-weight: 400;
+}
+.slogan .slogan-inner .slogan-content span em {
+  font-style: normal;
+  color: #FF4C79;
+  text-decoration: underline;
+}
+
 /* tip-tech */
 /* footer */
