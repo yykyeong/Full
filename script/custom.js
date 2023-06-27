@@ -42,6 +42,21 @@ $(function(){
     $(this).siblings().removeClass('active');
   });
 
+  /* 수강신청 장바구니 체크 */
+  
+  $('.cart-item .btn-clear').click(function(){
+    // $(this).parent().parent().parent().fadeOut();
+    $(this).parents('.cart-item').hide(100);
+  })
+  $('.cart-wrap .btn-all-clear').click(function(){
+    $('.cart-item').hide();
+  })
+  $('.cart-chk-all').click(function(){
+    $('.check-status .cart-chk').prop('checked', this.checked)
+    // attr('속성명') getter
+    // attr('속성명', '값') setter
+  })
+
   /* Front Slider */
   $('.front-slider-items').slick({
     infinite: true, // 마지막 슬라이드 다음에 처음으로 돌아가기
