@@ -48,11 +48,6 @@ body {
   font-size: 15px;
 }
 
-/* Temporary CSS */
-footer {
-  display: none;
-}
-
 /* ########################## Common CSS ########################## */
 section:not(.front-slider) {
   padding: 65px 0;
@@ -661,3 +656,51 @@ header .mega-navi .mega-navi-inner .mega-navi-item .mega-navi-item-wrap a:hover 
 }
 
 /* footer */
+footer {
+  background-color: #555555;
+  padding: 60px 0;
+  font-size: 13px;
+}
+footer * {
+  color: #BDBDBD;
+}
+footer .footer-inner .lnb-wrap {
+  display: flex;
+  gap: 100px;
+  border-bottom: 1px solid #777777;
+  padding-bottom: 40px;
+}
+footer .footer-inner .lnb-wrap .footer-slogan h2 {
+  color: #EEEEEE;
+  font-family: "SpoqaHanSansNeo-Regular";
+}
+footer .footer-inner .lnb-wrap .lnb {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+footer .footer-inner .lnb-wrap .lnb .link-item .link-item-title {
+  color: #EEEEEE;
+}
+footer .footer-inner .lnb-wrap .lnb .link-item .link-item-content a {
+  display: block;
+}
+footer .footer-inner .lnb-wrap .lnb .link-item .link-item-content a:hover {
+  text-decoration: underline;
+}
+footer .footer-inner .copyright-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+}
+footer .footer-inner .copyright-wrap address {
+  font-style: normal;
+}
+footer .footer-inner .copyright-wrap .sns a {
+  font-size: 20px;
+  margin: 3px;
+}
+footer .footer-inner .copyright-wrap .sns a:hover .bi {
+  color: #FFFFFF;
+}
