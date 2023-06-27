@@ -10,21 +10,31 @@ $(function(){
     $('section').click(function(){
       $('.mega-navi').stop().slideUp()
     })
+
+    /* 회원가입 */
+    $('.toggle-pw').click(function(){
+      // 아이콘 모양 변경
+      $(this).toggleClass('bi-eye')
+      // 인풋타입 변경
+      var inputType = $(this).parent().children('input').attr('type');
+      if(inputType == 'password'){
+        $(this).parent().children('input').attr('type','text');
+      } else {
+        $(this).parent().children('input').attr('type','password');
+      }
+    })
+
+    /* 로그인 버튼 눌렀을 때 모달 */
+    $('.btn-login, .login-member a').click(function(){
+      $('.member-login-overlay').fadeIn();
+    }) 
+    $('.member-login .btn-modal-close').click(function(){
+      $('.member-login-overlay').fadeOut();
+    })
   });
+
   $('.footer-include').load('/include/footer.html');
 
-  /* 회원가입 */
-  $('.toggle-pw').click(function(){
-    // 아이콘 모양 변경
-    $(this).toggleClass('bi-eye')
-    // 인풋타입 변경
-    var inputType = $(this).parent().children('input').attr('type');
-    if(inputType == 'password'){
-      $(this).parent().children('input').attr('type','text');
-    } else {
-      $(this).parent().children('input').attr('type','password');
-    }
-  }) 
 
   /* Scroll Header Fixed */
   $(window).scroll(function(){

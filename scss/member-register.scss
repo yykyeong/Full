@@ -4,7 +4,7 @@
   align-items: center;
   .member-register {
     width: 360px; 
-    .member-account {
+    @at-root .member-account {
       text-align: center;
       .login-slogan {
         font-family: $secondary-kr;
@@ -19,7 +19,7 @@
         margin: 30px 0;
       }
     }
-    .login-field {
+    @at-root .login-field {
       div {
         position: relative;
         margin: 15px 0;
@@ -44,7 +44,7 @@
         }
       }
       .toogle-pw {}
-      .btn-member-primary {
+      @at-root .btn-member-primary {
         background-color: $forestgreen;
         border: none;
         color: $white;

@@ -1,0 +1,99 @@
+
+/* 로그인 */
+.member-login-overlay {
+  position: fixed;
+  background-color: rgba($dark-black, .5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+  display: none;
+  
+  .member-login {
+    width: 360px;
+    background-color: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    padding: 30px;
+    .join-member {
+      font-size: 13px;
+      text-align: center;
+      margin: 10px 0; 
+      margin-bottom: 25px;
+      a {
+        text-decoration: underline;
+      }
+    }
+    .easy-login {
+      .btn-easy-login {
+        display: block;
+        border-radius: 3px;
+        padding: 10px;
+        margin: 7px 0;
+        font-size: 16px;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-position: center left 20px;
+        background-size: 20px;
+        color: $white;
+        &.kakao {
+          background-image: url(/images/icon-kakao.svg);
+          background-color: #ffd912;
+        }
+        &.facebook {
+          background-image: url(/images/icon-facebook.svg);
+          background-color: #006be5;
+        }
+        &.apple {
+          background-image: url(/images/icon-apple.svg);
+          background-color: #333;
+        }
+        &.email {
+          background-image: url(/images/icon-email.svg);
+          background-color: #fff;
+          border: 1px solid $dim-gray;
+          color: rgba($dark-black, .5);
+        }
+      }
+    }
+    .or {
+      display: block;
+      text-align: center;
+      color: $dark-gray;
+      margin: 10px 0;
+      position: relative;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 43%;
+        background-color: $dim-gray;
+        top: 50%;
+        filter: opacity(.5);
+      }
+      &::before {
+        left: 0;
+      }
+      &::after {
+        right: 0;
+      }
+    }
+    .login-notice {
+      font-size: 12px;
+      text-align: center;
+    }
+    .btn-modal-close {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      border: none;
+      background-color: transparent;
+      font-size: 1.3em;
+    }
+  }
+}
