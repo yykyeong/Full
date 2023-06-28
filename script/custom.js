@@ -1,15 +1,43 @@
 $(function(){
 
   /* Include Files */
+  
+  // 헤더
   $('.header-include').load('/include/header.html', function(){
 
-    /* Mega Navigation */
-    $('.trigger').click(function(){
-      $('.mega-navi').stop().slideToggle()
+    
+    /* Mega Navigation : Mobile & PC Width Check */
+    $(window).resize(function(){
+      /* 디바이스 너비가 767 이상 일 때(태블릿, PC) */
+      if($(window).innerWidth() > 767) {
+        $('.trigger').click(function(){
+          $(this).toggleClass('active');
+          $('.mega-navi').stop().slideToggle(300);
+        })
+        $('section').click(function(){
+          $('.mega-navi').stop().slideUp(300);
+        });
+      }
+      /* 디바이스 너비가 767 이하 일 때(모바일) */
+      else if($(window).innerWidth() < 767) {
+        $('.trigger').click(function(){
+          $('.mega-navi').animate({'left': 0}, 300);
+        });
+        $('section, .btn-mega-navi-close').click(function(){
+          $('.mega-navi').animate({'left': -300}, 300);
+        });
+      }
+    }).resize();
+
+    /* Mega Navi_mobile */
+    $('.mega-navi-item b').click(function(){
+      $('.mega-navi-item-wrap').slideUp(200);
+      // $(this).next().stop().slideToggle(200);
+      $(this).next().stop().slideDown(200);
+      $(this).addClass('active');
+      $(this).parent().siblings().children('b').removeClass('active');
     })
-    $('section').click(function(){
-      $('.mega-navi').stop().slideUp()
-    })
+
 
     /* 회원가입 */
     $('.toggle-pw').click(function(){
@@ -35,7 +63,21 @@ $(function(){
     })
   });
 
-  $('.footer-include').load('/include/footer.html');
+  // 푸터
+  $('.footer-include').load('/include/footer.html', function(){
+
+    /* Footer LNB */
+    $('.link-item-title').click(function(){
+      $(this).next().stop().slideToggle(200);
+      $(this).toggleClass('active');
+    })
+
+    /* Company Info Trigger */
+    $('.company-info-trigger').click(function(){
+      $('address').toggle();
+    })
+
+  });
 
 
   /* Scroll Header Fixed */

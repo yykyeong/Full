@@ -67,7 +67,8 @@ header {
         img {}
       }
 
-      .search {
+      @at-root .search,
+      .search-mobile {
         width: 520px;
         position: relative;
 
@@ -213,6 +214,12 @@ header {
     background-color: $dark-black;
     width: 100%;
     display: none;
+    .search-mobile {
+      display: none;
+    }
+    .btn-mega-navi-close {
+      display: none
+    };
     .mega-navi-inner {
       width: 1160px;
       margin: auto;
@@ -769,6 +776,7 @@ footer {
         .link-item {
           .link-item-title {
             color: $silver-gray;
+            pointer-events: none; // 모바일 반영 안되게 하려고
           }
           .link-item-content {
             a {
@@ -786,7 +794,9 @@ footer {
       justify-content: space-between;
       align-items: center;
       padding-top: 30px;
-      .company-info-trigger {}
+      .company-info-trigger {
+        display: none;
+      }
       address {
         font-style: normal;
         p {}
