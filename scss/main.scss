@@ -12,6 +12,10 @@ body.active {
   overflow: hidden; // 모달 나왔을 때 뒤에 스크롤 안되게
 }
 
+// html {
+//   scroll-behavior: smooth; 도메인에 아이디 찍힘
+// }
+
 /* ########################## Common CSS ########################## */
 section:not(.front-slider) {
   padding: 65px 0;

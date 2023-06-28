@@ -95,6 +95,31 @@ $(function(){
   });
 
 
+  /* 수강 디테일 네비게이션 */
+  $('.class-detail-navigation a').click(function(e){
+    $(this).addClass('active').siblings().removeClass('active');
+
+    var linkLocation = $(this).attr('href');
+    $('html, body').animate({
+      scrollTop: $(linkLocation).offset().top
+    }, 500)
+
+    e.preventDefault()
+  })
+
+  /* 강의상세_아코디언 */
+  $('.chapter-title').click(function(){
+    $(this).next().toggle()
+    $(this).toggleClass('active')
+  })
+
+  /* 자주묻는질문 */
+  $('.faq-title').click(function(){
+    // $(this).siblings('.faq-content').stop().slideUp()
+    // $(this).next().stop().slideDown(200);
+    $(this).next().stop().slideToggle(200);
+  }) 
+
   /* Front Slider */
   $('.front-slider-items').slick({
     infinite: true, // 마지막 슬라이드 다음에 처음으로 돌아가기
