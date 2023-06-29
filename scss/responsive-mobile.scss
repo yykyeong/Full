@@ -22,13 +22,24 @@
     .header-inner {
       padding: 0 10px;
 
-      .logo {
-        img {}
+      .logo-search {
+        .logo {
+          img {
+            width: 185px;
+          }
+        }
+        .search {
+          display: none;
+        }
+
+        .login-register-buttons {
+          button {
+            padding: 5px;
+            font-size: 13px;
+          }
+        }
       }
 
-      .search {
-        display: none;
-      }
 
       .gnb {
         .trigger {
@@ -45,7 +56,6 @@
 
         .special-navi {
           white-space: nowrap;
-          width: 360px;
           overflow-y: hidden;
         }
 
@@ -254,17 +264,21 @@
       .focus-class-content {
         overflow-x: hidden;
 
-        .focus-class-items {
+        @at-root .focus-class-items {
           width: 480px;
-
           .focus-class-item {
             .thum {
               height: 120px;
             }
 
             .overview {
+              min-height: 95px;
               h4 {
                 font-size: 14px;
+              }
+
+              .class-info {
+                font-size: 12px;
               }
 
               .class-price {
@@ -289,7 +303,7 @@
       .best-class-content {
         .best-class-wrap {
           flex-direction: column;
-
+          gap: 0;
           .invite-banner {
             img {
               width: 100%;
@@ -298,13 +312,11 @@
           }
 
           .best-class-items-outer {
+            margin-top: 10px;
             .best-class-items {
               flex-direction: column;
-              margin-bottom: 10px;
-
+              gap: 0;
               .best-class-item {
-                margin-bottom: -10px;
-
                 .overview {
                   .class-price {
                     transform: scale(.9);
@@ -332,7 +344,7 @@
           width: 100%;
 
           #early-bird-countdown {
-            font-size: 24px;
+            font-size: 22px;
           }
 
           margin-bottom: 20px;
@@ -387,7 +399,7 @@
         padding: 0 20px;
 
         h1 {
-          font-size: 24px;
+          font-size: 22px;
         }
 
         span {
@@ -512,20 +524,25 @@
 
   .class-detail-full {
     padding: 0;
+
     .class-detail-full-inner {
       .class-detail-full-content {
         flex-direction: column-reverse;
-        > div {
+
+        >div {
           box-shadow: none;
           padding: 10px;
           border-radius: 0;
 
         }
+
         .class-detail-info {
           .class-detail-navigation {
-            gap: 7px;
+            gap: 10px;
+            overflow-y: hidden;
             a {
-              font-size: 13px;
+              font-size: 14px;
+              white-space: nowrap;
             }
           }
 
@@ -537,6 +554,30 @@
           }
 
           // 커리큘럼
+          .class-curriculum {
+            .curriculum-accordion {
+              .accordion-item-wrap {
+                .chapter-title {
+                  font-size: 13px;
+                  .chapter-hour {
+                    display: none;
+                  }
+                }
+                .chapter-content {
+                  .chapter-content-class {
+                    .class-subject {
+                      font-size: 13px;
+                    }
+                    .class-hour {
+                      .class-hour-detail {
+                        display: none;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
 
           // 리뷰
           .class-reivew {
@@ -553,20 +594,23 @@
 
           .class-mentor {
             .class-detail-wrap {
-                flex-direction: column;
+              flex-direction: column;
             }
           }
         }
 
         .class-detail-sidebar {
           position: static;
+
           .class-detail-sidebar-wrap.group-required-info {
             .overview {
               .class-price {
                 justify-content: flex-end;
+
                 .sale {
                   margin-right: 30px;
                 }
+
                 .price-current {
                   margin-right: 50px;
                 }
@@ -578,4 +622,39 @@
     }
   }
 
+  /* 이벤트 배너 */
+  .front-event-banner  {
+    width: 330px;
+    bottom: 50px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  /* 모달_로그인 */
+  .member-login-overlay {
+    .member-login {
+      width: 90%;
+      padding: 15px 30px;
+      .member-account {
+        margin-bottom: 10px;
+      }
+      .join-member {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  /* 모달 공유하기 */
+  .class-share-overlay {
+    .class-share {
+      width: 90%;
+    }
+  }
+}
+
+
+@media (min-width: 400px) and (max-width:767px) {
+  .focus-class-items {
+    width: 560px;
+  }
 }

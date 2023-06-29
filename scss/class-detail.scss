@@ -134,15 +134,26 @@
         // 커리큘럼
         .class-curriculum {
           .class-detail-wrap {
-
             // 접기 펼치기 버튼
             .curriculum-all-fold-expand {
-              .btn-curriculum-fold {}
-              .btn-curriculum-expand {
-                &.selected {}
+              display: flex;
+              justify-content: flex-end;
+              gap: 10px;
+              padding: 15px 0;
+            
+              button {
+                border: 1px solid $dim-black;
+                border-radius: 3px;
+                background-color: transparent;
+            
+                &.selected {
+                  color: $dark-gray;
+                  border-color: inherit;
+                }
               }
-              span {}
+            
             }
+            
 
             // 커리큘럼_헤더
             .curriculum-basic-info.header {
@@ -603,6 +614,7 @@
               }
             }
           }
+
         }
         .class-detail-sidebar-wrap.group-sub-action {
           display: flex;
@@ -789,5 +801,35 @@
       }
     }
     .btn-modal-close {}
+  }
+}
+
+/* gototop */
+.gototop {
+  border: 1px solid $silver-gray;
+  width: 40px;
+  height: 40px;
+  background-color: $white;
+  position: fixed;
+  bottom: 20px;
+  left: -100px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 0 5px rgba($black, .1);
+  transition: .35s;
+  cursor: pointer;
+  &.active {
+    left: 20px;
+  }
+  &:after {
+    content: 'top';
+    text-transform: uppercase;
+    color: $light-black;
+    font-size: 10px;
+    display: block;
+    margin-top: -3px;
+  }
+  .bi {
+    color: $light-black;
   }
 }

@@ -447,6 +447,16 @@ header .mega-navi .mega-navi-inner .mega-navi-item .mega-navi-item-wrap a:hover 
   display: inline-block;
 }
 
+.focus-class-items .focus-class-item .overview {
+  display: flex;
+  flex-direction: column;
+  min-height: 110px;
+  margin-top: 5px;
+}
+.focus-class-items .focus-class-item .overview h4 {
+  margin-bottom: auto;
+}
+
 /* best-class */
 .best-class .best-class-inner .best-class-content .best-class-wrap {
   display: flex;
@@ -486,6 +496,8 @@ header .mega-navi .mega-navi-inner .mega-navi-item .mega-navi-item-wrap a:hover 
   margin-top: 0;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  font-size: 14px;
 }
 .best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items .best-class-item .overview .class-price {
   margin-top: auto;
@@ -736,6 +748,43 @@ footer .footer-inner .copyright-wrap .sns a {
 }
 footer .footer-inner .copyright-wrap .sns a:hover .bi {
   color: #FFFFFF;
+}
+
+/* 이벤트 배너 */
+.front-event-banner {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+.front-event-banner .event-banner-item.meneto-hiring {
+  border-radius: 60px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.front-event-banner .event-banner-item.new-year {
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  border: 1px solid #EEEEEE;
+}
+.front-event-banner .event-banner-item img {
+  display: block;
+}
+.front-event-banner .close-button {
+  background-color: #FFFFFF;
+  height: 40px;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #EEEEEE;
+  border-top: none;
+}
+.front-event-banner .close-button a {
+  flex: 1;
+  border-right: 1px solid #DDDDDD;
+}
+.front-event-banner .close-button a:last-child {
+  border: none;
 }
 
 .category-class .category-class-inner .category-class-main {
@@ -1357,6 +1406,21 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
   font-style: normal;
   color: #2ECC71;
 }
+.class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-curriculum .class-detail-wrap .curriculum-all-fold-expand {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 15px 0;
+}
+.class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-curriculum .class-detail-wrap .curriculum-all-fold-expand button {
+  border: 1px solid #555555;
+  border-radius: 3px;
+  background-color: transparent;
+}
+.class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-curriculum .class-detail-wrap .curriculum-all-fold-expand button.selected {
+  color: #BDBDBD;
+  border-color: inherit;
+}
 .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-curriculum .class-detail-wrap .curriculum-basic-info.header {
   background-color: #F5F5F5;
   border-radius: 5px;
@@ -1920,6 +1984,36 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
   color: #333333;
   font-size: 2em;
 }
+/* gototop */
+.gototop {
+  border: 1px solid #EEEEEE;
+  width: 40px;
+  height: 40px;
+  background-color: #FFFFFF;
+  position: fixed;
+  bottom: 20px;
+  left: -100px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: 0.35s;
+  cursor: pointer;
+}
+.gototop.active {
+  left: 20px;
+}
+.gototop:after {
+  content: "top";
+  text-transform: uppercase;
+  color: #999999;
+  font-size: 10px;
+  display: block;
+  margin-top: -3px;
+}
+.gototop .bi {
+  color: #999999;
+}
+
 /* Responsive for Mobile */
 @media (max-width: 767px) {
   /* ########################## Common CSS ########################## */
@@ -1937,8 +2031,15 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
   header .header-inner {
     padding: 0 10px;
   }
-  header .header-inner .search {
+  header .header-inner .logo-search .logo img {
+    width: 185px;
+  }
+  header .header-inner .logo-search .search {
     display: none;
+  }
+  header .header-inner .logo-search .login-register-buttons button {
+    padding: 5px;
+    font-size: 13px;
   }
   header .header-inner .gnb .trigger {
     transform: translateY(-2px);
@@ -1951,7 +2052,6 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
   }
   header .header-inner .gnb .special-navi {
     white-space: nowrap;
-    width: 360px;
     overflow-y: hidden;
   }
   header .header-inner .gnb a:first-child::after {
@@ -2100,37 +2200,44 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
   .focus-class .focus-class-inner .focus-class-content {
     overflow-x: hidden;
   }
-  .focus-class .focus-class-inner .focus-class-content .focus-class-items {
+  .focus-class-items {
     width: 480px;
   }
-  .focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .thum {
+  .focus-class-items .focus-class-item .thum {
     height: 120px;
   }
-  .focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview h4 {
+  .focus-class-items .focus-class-item .overview {
+    min-height: 95px;
+  }
+  .focus-class-items .focus-class-item .overview h4 {
     font-size: 14px;
   }
-  .focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-price {
+  .focus-class-items .focus-class-item .overview .class-info {
+    font-size: 12px;
+  }
+  .focus-class-items .focus-class-item .overview .class-price {
     transform: scale(0.7);
     transform-origin: left;
     white-space: nowrap;
   }
-  .focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-review {
+  .focus-class-items .focus-class-item .overview .class-review {
     font-size: 10px;
   }
   /* best-class */
   .best-class .best-class-inner .best-class-content .best-class-wrap {
     flex-direction: column;
+    gap: 0;
   }
   .best-class .best-class-inner .best-class-content .best-class-wrap .invite-banner img {
     width: 100%;
     height: auto;
   }
+  .best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer {
+    margin-top: 10px;
+  }
   .best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items {
     flex-direction: column;
-    margin-bottom: 10px;
-  }
-  .best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items .best-class-item {
-    margin-bottom: -10px;
+    gap: 0;
   }
   .best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items .best-class-item .overview .class-price {
     transform: scale(0.9);
@@ -2146,7 +2253,7 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
     margin-bottom: 20px;
   }
   .early-bird .early-bird-inner .early-bird-content .countdown-wrap #early-bird-countdown {
-    font-size: 24px;
+    font-size: 22px;
   }
   .early-bird .early-bird-inner .early-bird-content .early-bird-banner {
     flex-direction: column;
@@ -2176,7 +2283,7 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
     padding: 0 20px;
   }
   .slogan .slogan-inner .slogan-content h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
   .slogan .slogan-inner .slogan-content span {
     font-size: 16px;
@@ -2256,13 +2363,27 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
     border-radius: 0;
   }
   .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-detail-navigation {
-    gap: 7px;
+    gap: 10px;
+    overflow-y: hidden;
   }
   .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-detail-navigation a {
-    font-size: 13px;
+    font-size: 14px;
+    white-space: nowrap;
   }
   .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-introduce * img {
     width: 100%;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-curriculum .curriculum-accordion .accordion-item-wrap .chapter-title {
+    font-size: 13px;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-curriculum .curriculum-accordion .accordion-item-wrap .chapter-title .chapter-hour {
+    display: none;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-curriculum .curriculum-accordion .accordion-item-wrap .chapter-content .chapter-content-class .class-subject {
+    font-size: 13px;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-curriculum .curriculum-accordion .accordion-item-wrap .chapter-content .chapter-content-class .class-hour .class-hour-detail {
+    display: none;
   }
   .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-reivew .class-detail-wrap .review-group {
     flex-direction: column;
@@ -2281,6 +2402,33 @@ footer .footer-inner .copyright-wrap .sns a:hover .bi {
   }
   .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-sidebar .class-detail-sidebar-wrap.group-required-info .overview .class-price .price-current {
     margin-right: 50px;
+  }
+  /* 이벤트 배너 */
+  .front-event-banner {
+    width: 330px;
+    bottom: 50px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  /* 모달_로그인 */
+  .member-login-overlay .member-login {
+    width: 90%;
+    padding: 15px 30px;
+  }
+  .member-login-overlay .member-login .member-account {
+    margin-bottom: 10px;
+  }
+  .member-login-overlay .member-login .join-member {
+    margin-bottom: 10px;
+  }
+  /* 모달 공유하기 */
+  .class-share-overlay .class-share {
+    width: 90%;
+  }
+}
+@media (min-width: 400px) and (max-width: 767px) {
+  .focus-class-items {
+    width: 560px;
   }
 }
 /* Responsive for Tablet */

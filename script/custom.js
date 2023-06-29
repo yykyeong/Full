@@ -61,6 +61,16 @@ $(function(){
       $('.member-login-overlay').fadeOut();
       $('body').removeClass('active');
     })
+
+    /* 로그인 모달 내 로그인 버튼 누르면 */
+    $('.btn-member-primary').click(function(){
+      $('.member-login-overlay').fadeOut();
+      $('.user-alarm').show();
+      $('.login-register-buttons').hide();
+      $('body').removeClass('active')
+    })
+
+
   });
 
   // 푸터
@@ -87,6 +97,19 @@ $(function(){
     } else {
       $('header').removeClass('active')
     }
+  })
+
+  /* 위로가기 */
+  $(window).scroll(function(){
+    if($(this).scrollTop() > 700) {
+      $('.gototop').addClass('active')
+    } else {
+      $('.gototop').removeClass('active')
+    }
+  })
+
+  $('.gototop').click(function(){
+    $('html, body').animate({scrollTop:0}, 500)
   })
 
   /* Countdown*/
@@ -155,6 +178,21 @@ $(function(){
     $(this).toggleClass('active')
   })
 
+  /* 모두 접기&펼치기 */ 
+  $('.btn-curriculum-fold').click(function(){
+    $('.chapter-content').slideUp(200);
+    $(this).addClass('selected')
+    $(this).siblings('button').removeClass('selected')
+    $('.chapter-title').addClass('active')
+  })
+  $('.btn-curriculum-expand').click(function(){
+    $('.chapter-content').slideDown(200);
+    $(this).addClass('selected')
+    $(this).siblings('button').removeClass('selected')
+    $('.chapter-title').removeClass('active')
+  })
+
+
   /* 자주묻는질문 */
   $('.faq-title').click(function(){
     // $(this).siblings('.faq-content').stop().slideUp()
@@ -162,6 +200,31 @@ $(function(){
     $(this).next().stop().slideToggle(200);
   }) 
 
+  /* 이벤트 배너 */
+  $('.close-button a').click(function(){
+    $('.front-event-banner').fadeOut();
+  })
+
+  /* 장바구니 담기 완료 */
+  $('.btn-primary.btn-cart').click(function(){
+    $('.cart-confirm').show()
+    setTimeout(function(){
+      $('.cart-confirm').hide()
+    }, 1000)
+  }) 
+  $('.cart-confirm .btn-close').click(function(){
+    $('.cart-confirm').hide()
+  }) 
+
+  /* 찜 */
+  $('.zzim').click(function(){
+    $(this).children().toggleClass('bi-heart bi-heart-fill');
+    $(this).children().css({
+      'color': '#FF4C79'
+    });
+  });
+
+  
   /* Front Slider */
   $('.front-slider-items').slick({
     infinite: true, // 마지막 슬라이드 다음에 처음으로 돌아가기
